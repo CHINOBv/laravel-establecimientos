@@ -18,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return res.json();
         };
-        const lat = 25.6490376;
-        const lng = -100.44318;
+
+        let lat = document.querySelector("#lat").value || 25.6490376;
+        let lng = document.querySelector("#lng").value || -100.44318;
 
         const mapa = L.map("mapa").setView([lat, lng], 16);
 
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector("#colonia").value =
                 data.address.district || "";
             document.querySelector("#lat").value = data.position.lat || "";
-            document.querySelector("#lat").value = data.position.lng || "";
+            document.querySelector("#lng").value = data.position.lng || "";
             //console.log(data);
         }
     }
