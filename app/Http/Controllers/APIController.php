@@ -24,9 +24,6 @@ class APIController extends Controller
 
     public function show(Establecimiento $establecimiento)
     {
-        $establecimientos = Establecimiento::where('id', $establecimiento->id)
-        ->with('categoria')
-        ->get();
-        return response()->json($establecimientos) ;
+        return response()->json($establecimiento);
     }
 }
