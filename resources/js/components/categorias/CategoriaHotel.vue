@@ -25,9 +25,18 @@
                             {{ hotel.apertura }} -
                             {{ hotel.cierre }}
                         </p>
-                        <a href="" class="btn btn-primary d-block">
-                            Ver Lugar
-                        </a>
+                        <router-link
+                            :to="{
+                                name: 'establecimiento',
+                                params: {
+                                    id: hotel.id
+                                }
+                            }"
+                        >
+                            <a href="" class="btn btn-primary d-block">
+                                Ver Lugar
+                            </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
