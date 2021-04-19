@@ -13,10 +13,11 @@ class APIController extends Controller
         $categorias = Categoria::all();
         return response()->json($categorias);
     }
+
     public function categoria(Categoria $categoria)
     {
 
-        $establecimientos = Establecimiento::where('categoria_id', $categoria->id)->get();
+        $establecimientos = Establecimiento::where('categoria_id', $categoria->id)->with('categoria')->get();
 
         return response()->json($establecimientos);
     }
